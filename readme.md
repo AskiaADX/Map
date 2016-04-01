@@ -20,7 +20,7 @@ Dependencies
 Notes
 -------
 
-	- Maps
+	- Maps (France, United Kingdom, USA, Germany, Belgium or Italy)
     - Some parameters can have different rendering depending of the browser used.
     - The size of the map is fixed on IE8.
     - To create a line break in the caption, use backslash + n "\n"
