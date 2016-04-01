@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<control  xmlns="http://www.askia.com/ADCSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.askia.com/ADCSchema http://www.askia.com/Downloads/dev/schemas/adc2.0/Config.xsd"
+          version="2.0.0"
+          askiaCompat="5.3.3">
+  <info>
+    <name>adc2-map</name>
+    <guid>a4a47338-1f21-4fc9-ab7e-3b92ab8e2421</guid>
+    <version>1.0.0</version>
+    <date>2016-03-30</date>
+    <description><![CDATA[Several map available]]></description>
+    <company>Askia</company>
+    <author><![CDATA[Jérôme Duparc <jeromed@askia.com>]]></author>
+    <site>http://www.askia.com</site>
+    <helpURL></helpURL>
+    <categories>
+      <category>General</category>
+    </categories>
+    <style width="400" height="300" />
+    <constraints>
+      <constraint on="questions" chapter="false" single="true" multiple="false" numeric="false" date="false" open="false" requireParentLoop="false" />
+      <constraint on="controls" responseblock="true" label="false" textbox="false" checkbox="false" listbox="false" radiobutton="false" />
+      <constraint on="responses" max="*" min="*" />
+    </constraints>
+  </info>
+  <outputs defaultOutput="default">
+    <output id="default">
+      <description><![CDATA[Javascript is enable]]></description>
+      <condition><![CDATA[(browser.support("Javascript")) and (Not((Browser.Name = "Internet Explorer") and (Browser.Version.ToNumber() < 8)))]]></condition>
+      <content fileName="map.css" type="css" mode="static" position="head" />
+      <content fileName="styles.css" type="css" mode="dynamic" position="head" />
+      <content fileName="stylesltie9.html" type="html" mode="dynamic" position="head" />
+      <content fileName="default.html" type="html" mode="dynamic" position="placeholder" />
+      <content fileName="raphael-min.js" type="javascript" mode="static" position="foot" />
+      <content fileName="map-min.js" type="javascript" mode="static" position="foot" />
+      <content fileName="Initializer.js" type="javascript" mode="dynamic" position="foot" />
+      <content fileName="blankMap.png" type="image" mode="static" position="none" />
+      <content fileName="fr.txt" type="text" mode="dynamic" position="none" />
+      <content fileName="uk.txt" type="text" mode="dynamic" position="none" />
+      <content fileName="usa.txt" type="text" mode="dynamic" position="none" />
+      <content fileName="de.txt" type="text" mode="dynamic" position="none" />
+      <content fileName="be.txt" type="text" mode="dynamic" position="none" />
+      <content fileName="it.txt" type="text" mode="dynamic" position="none" />
+    </output>
+    <output id="fallback">
+      <description><![CDATA[Javascript is not enable]]></description>
+      <condition><![CDATA[(not(Browser.Support("javascript"))) or ((Browser.Name = "Internet Explorer") and (Browser.Version.ToNumber() < 8))]]></condition>
+      <content fileName="fallback.html" type="html" mode="dynamic" position="placeholder" />
+    </output>
+  </outputs>
+  <properties>
+    <category id="general" name="General">
+      <property xsi:type="standardProperty" id="mapid" name="Use map" type="string" require="true" visible="true">
+        <description><![CDATA[Which map to use]]></description>
+        <value><![CDATA[1]]></value>
+        <options>
+          <option value="1" text="France" />
+          <option value="2" text="United Kingdom" />
+          <option value="3" text="USA" />
+          <option value="4" text="Germany" />
+          <option value="5" text="Belgium" />
+          <option value="6" text="Italy" />
+        </options>
+      </property>
+      <property xsi:type="standardProperty" id="maxWidth" name="Max Width" type="string" mode="dynamic" require="true" visible="true">
+        <description><![CDATA[Max width of the map]]></description>
+        <value><![CDATA[450px]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="controlAlign" name="Control Alignment" type="string" mode="dynamic" require="true" visible="true">
+        <description><![CDATA[The alignment of the control]]]></description>
+        <value><![CDATA[center]]></value>
+        <options>
+          <option value="left" text="Left" />
+          <option value="center" text="Center" />
+          <option value="right" text="Right" />
+        </options>
+      </property>
+      <property xsi:type="standardProperty" id="fontSize" name="Font Size" type="number" mode="dynamic" require="true" visible="true" min="14" max="18" decimal="0">
+        <description><![CDATA[Font size of the region]]></description>
+        <value><![CDATA[16]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="animatePath" name="Animate Area" type="string" mode="dynamic" require="true" visible="true">
+        <description><![CDATA[Animate the area]]></description>
+        <value><![CDATA[yes]]></value>
+        <options>
+          <option value="yes" text="Yes" />
+          <option value="no" text="No" />
+        </options>
+      </property>
+    </category>
+    <category id="stateOff" name="State Off">
+      <property xsi:type="standardProperty" id="fill" name="Background Color" type="color" mode="dynamic" require="true" visible="true" colorFormat="rgb">
+        <description><![CDATA[Background color of the area]]></description>
+        <value><![CDATA[247,247,247]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="fillText" name="Font Color" type="color" mode="dynamic" require="true" visible="true" colorFormat="rgb">
+        <description><![CDATA[Font color of the area]]></description>
+        <value><![CDATA[68,68,68]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="opacityText" name="Show Text" type="string" mode="dynamic" require="true" visible="true">
+        <description><![CDATA[Show the text on the Off state]]></description>
+        <value><![CDATA[0.0]]></value>
+        <options>
+          <option value="1.0" text="Yes" />
+          <option value="0.0" text="No" />
+        </options>
+      </property>
+      <property xsi:type="standardProperty" id="strokeColor" name="Border Color" type="color" mode="dynamic" require="true" visible="true">
+        <description><![CDATA[The border color of the area]]></description>
+        <value><![CDATA[161,167,173]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="strokeWidth" name="Border Thickness" type="string" mode="dynamic" require="true" visible="true">
+        <description><![CDATA[The thickness of the border around the area]]></description>
+        <value><![CDATA[1]]></value>
+        <options>
+          <option value="0" text="None" />
+          <option value="1" text="1px" />
+          <option value="2" text="2px" />
+          <option value="3" text="3px" />
+          <option value="4" text="4px" />
+          <option value="5" text="5px" />
+        </options>
+      </property>
+    </category>
+    <category id="stateHover" name="State Hover">
+      <property xsi:type="standardProperty" id="fillHover" name="Hover Background Color" type="color" mode="dynamic" require="true" visible="true" colorFormat="rgb">
+        <description><![CDATA[Background color of the area when hovered over]]></description>
+        <value><![CDATA[255,255,255]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="fillTextHover" name="Hover Font Color" type="color" mode="dynamic" require="true" visible="true" colorFormat="rgb">
+        <description><![CDATA[Font color of the area when hovered over]]></description>
+        <value><![CDATA[68,68,68]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="opacityTextHover" name="Hover Show Text" type="string" mode="dynamic" require="true" visible="true">
+        <description><![CDATA[Show the text when hovered over]]></description>
+        <value><![CDATA[1.0]]></value>
+        <options>
+          <option value="1.0" text="Yes" />
+          <option value="0.0" text="No" />
+        </options>
+      </property>
+      <property xsi:type="standardProperty" id="strokeColorHover" name="Hover Border Color" type="color" mode="dynamic" require="true" visible="true">
+        <description><![CDATA[The border color of the area when hovered over]]></description>
+        <value><![CDATA[161,167,173]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="strokeWidthHover" name="Hover Border Thickness" type="string" mode="dynamic" require="true" visible="true">
+        <description><![CDATA[The thickness of the border around the area when hovered over]]></description>
+        <value><![CDATA[1]]></value>
+        <options>
+          <option value="0" text="None" />
+          <option value="1" text="1px" />
+          <option value="2" text="2px" />
+          <option value="3" text="3px" />
+          <option value="4" text="4px" />
+          <option value="5" text="5px" />
+        </options>
+      </property>
+    </category>
+    <category id="stateSelected" name="State Selected">
+      <property xsi:type="standardProperty" id="fillSelected" name="Selected Background Color" type="color" mode="dynamic" require="true" visible="true" colorFormat="rgb">
+        <description><![CDATA[Background color of the area when selected]]></description>
+        <value><![CDATA[232,241,255]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="fillTextSelected" name="Selected Font Color" type="color" mode="dynamic" require="true" visible="true" colorFormat="rgb">
+        <description><![CDATA[Font color of the area when selected]]></description>
+        <value><![CDATA[0,123,198]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="opacityTextSelected" name="Selected Show Text" type="string" mode="dynamic" require="true" visible="true">
+        <description><![CDATA[Show the text when selected]]></description>
+        <value><![CDATA[1.0]]></value>
+        <options>
+          <option value="1.0" text="Yes" />
+          <option value="0.0" text="No" />
+        </options>
+      </property>
+      <property xsi:type="standardProperty" id="strokeColorSelected" name="Selected Border Color" type="color" mode="dynamic" require="true" visible="true">
+        <description><![CDATA[The border color of the area when selected]]></description>
+        <value><![CDATA[161,167,173]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="strokeWidthSelected" name="Selected Border Thickness" type="string" mode="dynamic" require="true" visible="true">
+        <description><![CDATA[The thickness of the border around the area when selected]]></description>
+        <value><![CDATA[1]]></value>
+        <options>
+          <option value="0" text="None" />
+          <option value="1" text="1px" />
+          <option value="2" text="2px" />
+          <option value="3" text="3px" />
+          <option value="4" text="4px" />
+          <option value="5" text="5px" />
+        </options>
+      </property>
+    </category>
+  </properties>
+</control>

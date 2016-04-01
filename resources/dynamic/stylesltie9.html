@@ -1,0 +1,17 @@
+{%
+Dim widthMap = On(CurrentADC.PropValue("mapid").ToNumber(),"598","500","922","592","803","730")
+Dim heightMap = On(CurrentADC.PropValue("mapid").ToNumber(),"671","742","582","801","656","864")
+%}
+<!--[if lt IE 9]>
+<style>
+    #adc_{%= CurrentADC.InstanceId %}_wrapper,
+    #adc_{%= CurrentADC.InstanceId %}_mapAreaForm,
+    #adc_{%= CurrentADC.InstanceId %} img,
+    #adc_{%= CurrentADC.InstanceId %}_container,
+    #adc_{%= CurrentADC.InstanceId %} svg {
+        width:{%:= widthMap.ToNumber() %}px;
+        max-width:{%:= widthMap.ToNumber() %}px;
+		height: {%:= heightMap.ToNumber() %}px;
+    }
+</style>
+<![endif]-->

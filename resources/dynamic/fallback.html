@@ -1,0 +1,24 @@
+{%
+Dim i
+Dim attrChecked
+Dim inputValue
+Dim inputName = CurrentQuestion.InputName()
+Dim inputId
+Dim caption
+%}
+<div id="adc_{%= CurrentADC.InstanceId %}" class="adc-map">
+    <div id="adc_{%= CurrentADC.InstanceId %}_mapAreaForm" class="mapAreaForm">
+    	{%
+        For i = 1 To CurrentQuestion.Responses.Count
+            attrChecked = On(CurrentQuestion.Responses[i].IsSelected, "checked=\"checked\"", "")
+            inputValue  = CurrentQuestion.Responses[i].InputValue()
+            inputId     = inputName + "_" + inputValue
+    		caption     = CurrentQuestion.Responses[i].Caption.Replace("\n"," ")
+		%}
+        <div class="item">
+            <input type="radio" id="{%= inputId %}" name="{%= inputName %}" value="{%= inputValue %}" class="zone{%= inputValue %}" {%:= attrChecked %} />
+            <label for="{%= inputId %}">{%:= caption %}</label>
+        </div>
+		{% Next i %}
+    </div>
+</div>

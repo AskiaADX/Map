@@ -1,0 +1,43 @@
+{%
+Dim i
+Dim attrChecked
+Dim inputValue
+Dim inputName = CurrentQuestion.InputName()
+Dim inputId
+Dim caption
+Dim nResponses = On(CurrentADC.PropValue("mapid").ToNumber(),13,12,51,16,11,20)
+%}
+<script>
+    var ie8 = false;
+</script>
+
+<!--[if lt IE 9]>
+    <script>
+    	ie8 = true;
+    </script>
+<![endif]-->
+{% If (CurrentQuestion.Responses.Count <> nResponses) Then %}
+<div style="background:#FF0000;color:#FFFFFF;padding: 10px;font-weight:bold;text-align:center;">
+    There is not the good number of responses. The control needs {%:= nResponses %} responses.
+</div>
+{% EndIf %}
+<div id="adc_{%= CurrentADC.InstanceId %}" class="adc-map">
+    <div id="adc_{%= CurrentADC.InstanceId %}_wrapper" class="wrapper">
+        <img src="{%:= CurrentADC.URLTo("static/blankMap.png") %}" />
+        <div id="adc_{%= CurrentADC.InstanceId %}_container" class="container"></div>
+    </div>
+    <div id="adc_{%= CurrentADC.InstanceId %}_mapAreaForm" class="mapAreaForm">
+    	{%
+        For i = 1 To CurrentQuestion.Responses.Count
+            attrChecked = On(CurrentQuestion.Responses[i].IsSelected, "checked=\"checked\"", "")
+            inputValue  = CurrentQuestion.Responses[i].InputValue()
+            inputId     = inputName + "_" + inputValue
+    		caption     = CurrentQuestion.Responses[i].Caption.Replace("\n","")
+		%}
+        <div class="item">
+            <input type="radio" id="{%= inputId %}" name="{%= inputName %}" value="{%= inputValue %}" class="zone{%= inputValue %}" {%:= attrChecked %} />
+            <label for="{%= inputId %}">{%:= caption %}</label>
+        </div>
+		{% Next i %}
+    </div>
+</div>
