@@ -326,7 +326,7 @@
 			w = (document.documentElement.clientWidth < width || ie8) ? document.documentElement.clientWidth : width;
 			h = w / ratio;
 		}
-
+		
 		if (ie8 == false) {
 			// any code here will be executed by IE 9 and greater
 			obj.setSize(width, height);

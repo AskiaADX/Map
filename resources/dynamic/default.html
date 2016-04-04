@@ -6,6 +6,7 @@ Dim inputName = CurrentQuestion.InputName()
 Dim inputId
 Dim caption
 Dim nResponses = On(CurrentADC.PropValue("mapid").ToNumber(),13,12,51,16,11,20)
+Dim strMap = On(CurrentADC.PropValue("mapid").ToNumber(),"FR","UK","USA","DE","BE","IT")
 %}
 <script>
     var ie8 = false;
@@ -23,7 +24,7 @@ Dim nResponses = On(CurrentADC.PropValue("mapid").ToNumber(),13,12,51,16,11,20)
 {% EndIf %}
 <div id="adc_{%= CurrentADC.InstanceId %}" class="adc-map">
     <div id="adc_{%= CurrentADC.InstanceId %}_wrapper" class="wrapper">
-        <img src="{%:= CurrentADC.URLTo("static/blankMap.png") %}" />
+        <img src="{%:= CurrentADC.URLTo("static/blankMap" + strMap + ".png") %}" />
         <div id="adc_{%= CurrentADC.InstanceId %}_container" class="container"></div>
     </div>
     <div id="adc_{%= CurrentADC.InstanceId %}_mapAreaForm" class="mapAreaForm">

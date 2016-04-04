@@ -15,7 +15,6 @@ EndIf
     #adc_{%= CurrentADC.InstanceId %} svg {
 		width: 100%;
         max-width: {%:= CurrentADC.PropValue("maxWidth")%};
-        height: 100%;
     }
     #adc_{%= CurrentADC.InstanceId %}_wrapper,
     #adc_{%= CurrentADC.InstanceId %}_mapAreaForm {

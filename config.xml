@@ -42,6 +42,12 @@
       <content fileName="de.txt" type="text" mode="dynamic" position="none" />
       <content fileName="be.txt" type="text" mode="dynamic" position="none" />
       <content fileName="it.txt" type="text" mode="dynamic" position="none" />
+      <content fileName="blankMapBE.png" type="image" mode="static" position="none" />
+      <content fileName="blankMapDE.png" type="image" mode="static" position="none" />
+      <content fileName="blankMapFR.png" type="image" mode="static" position="none" />
+      <content fileName="blankMapIT.png" type="image" mode="static" position="none" />
+      <content fileName="blankMapUK.png" type="image" mode="static" position="none" />
+      <content fileName="blankMapUSA.png" type="image" mode="static" position="none" />
     </output>
     <output id="fallback">
       <description><![CDATA[Javascript is not enable]]></description>
