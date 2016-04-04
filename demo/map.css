@@ -3,7 +3,7 @@
 }
 .adc-map .wrapper {
     position:relative;
-    /*overflow:hidden;*/
+    overflow:hidden;
 }
 .adc-map .container {
     top:0;
