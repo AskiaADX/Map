@@ -1498,6 +1498,7 @@
                 }
             });
         }
+		console.log("askiaa");
         data.toString = R._path2string;
         pth.arr = pathClone(data);
         return data;
@@ -1532,6 +1533,7 @@
                 data.push([b][concat](params));
             });
         }
+		console.log("askiab");
         data.toString = R._path2string;
         return data;
     });
@@ -2019,6 +2021,7 @@
     },
         pathClone = function (pathArray) {
             var res = clone(pathArray);
+			console.log("askiac");
             res.toString = R._path2string;
             return res;
         },
@@ -2097,6 +2100,7 @@
                         y += +res[i][len - 1];
                 }
             }
+			console.log("askiad");
             res.toString = R._path2string;
             pth.rel = pathClone(res);
             return res;
@@ -2194,6 +2198,7 @@
                         y = r[r.length - 1];
                 }
             }
+			console.log("askiae");
             res.toString = R._path2string;
             pth.abs = pathClone(res);
             return res;
