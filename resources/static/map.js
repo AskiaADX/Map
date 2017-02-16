@@ -149,6 +149,9 @@
 				};
 			})(this.data("name"))
 		);
+        if (window.askia) {
+            askia.triggerAnswer();
+        }
 	}
 
 	/**

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<control  xmlns="http://www.askia.com/ADCSchema"
+<control  xmlns="http://www.askia.com/2.1.0/ADCSchema"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://www.askia.com/ADCSchema http://www.askia.com/Downloads/dev/schemas/adc2.0/Config.xsd"
-          version="2.0.0"
-          askiaCompat="5.3.3">
+          xsi:schemaLocation="http://www.askia.com/2.1.0/ADCSchema https://raw.githubusercontent.com/AskiaADX/ADXSchema/2.1.0/ADCSchema.xsd"
+          version="2.1.0"
+          askiaCompat="5.4.2">
   <info>
-    <name>adc2-map</name>
+    <name>Map</name>
     <guid>a4a47338-1f21-4fc9-ab7e-3b92ab8e2421</guid>
-    <version>1.0.1</version>
+    <version>2.0.0</version>
     <date>2016-03-30</date>
     <description><![CDATA[Several map available]]></description>
     <company>Askia</company>
@@ -17,7 +17,6 @@
     <categories>
       <category>General</category>
     </categories>
-    <style width="400" height="300" />
     <constraints>
       <constraint on="questions" chapter="false" single="true" multiple="false" numeric="false" date="false" open="false" requireParentLoop="false" />
       <constraint on="controls" responseblock="true" label="false" textbox="false" checkbox="false" listbox="false" radiobutton="false" />
@@ -96,13 +95,13 @@
       </property>
     </category>
     <category id="stateOff" name="State Off">
-      <property xsi:type="standardProperty" id="fill" name="Background Color" type="color" mode="dynamic" require="true" visible="true" colorFormat="rgb">
+      <property xsi:type="standardProperty" id="fill" name="Background Color" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
         <description><![CDATA[Background color of the area]]></description>
-        <value><![CDATA[247,247,247]]></value>
+        <value><![CDATA[{%= Theme.NeutralLightColor %}]]></value>
       </property>
-      <property xsi:type="standardProperty" id="fillText" name="Font Color" type="color" mode="dynamic" require="true" visible="true" colorFormat="rgb">
+      <property xsi:type="standardProperty" id="fillText" name="Font Color" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
         <description><![CDATA[Font color of the area]]></description>
-        <value><![CDATA[68,68,68]]></value>
+        <value><![CDATA[{%= Theme.BlackColor %}]]></value>
       </property>
       <property xsi:type="standardProperty" id="opacityText" name="Show Text" type="string" mode="dynamic" require="true" visible="true">
         <description><![CDATA[Show the text on the Off state]]></description>
@@ -112,9 +111,9 @@
           <option value="0.0" text="No" />
         </options>
       </property>
-      <property xsi:type="standardProperty" id="strokeColor" name="Border Color" type="color" mode="dynamic" require="true" visible="true">
+      <property xsi:type="standardProperty" id="strokeColor" name="Border Color" type="color" mode="dynamic" require="true" visible="false">
         <description><![CDATA[The border color of the area]]></description>
-        <value><![CDATA[161,167,173]]></value>
+        <value><![CDATA[{%= Theme.NeutralDarkColor %}]]></value>
       </property>
       <property xsi:type="standardProperty" id="strokeWidth" name="Border Thickness" type="string" mode="dynamic" require="true" visible="true">
         <description><![CDATA[The thickness of the border around the area]]></description>
@@ -130,13 +129,13 @@
       </property>
     </category>
     <category id="stateHover" name="State Hover">
-      <property xsi:type="standardProperty" id="fillHover" name="Hover Background Color" type="color" mode="dynamic" require="true" visible="true" colorFormat="rgb">
+      <property xsi:type="standardProperty" id="fillHover" name="Hover Background Color" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
         <description><![CDATA[Background color of the area when hovered over]]></description>
-        <value><![CDATA[255,255,255]]></value>
+        <value><![CDATA[{%= Theme.WhiteColor %}]]></value>
       </property>
-      <property xsi:type="standardProperty" id="fillTextHover" name="Hover Font Color" type="color" mode="dynamic" require="true" visible="true" colorFormat="rgb">
+      <property xsi:type="standardProperty" id="fillTextHover" name="Hover Font Color" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
         <description><![CDATA[Font color of the area when hovered over]]></description>
-        <value><![CDATA[68,68,68]]></value>
+        <value><![CDATA[{%= Theme.BlackColor %}]]></value>
       </property>
       <property xsi:type="standardProperty" id="opacityTextHover" name="Hover Show Text" type="string" mode="dynamic" require="true" visible="true">
         <description><![CDATA[Show the text when hovered over]]></description>
@@ -146,9 +145,9 @@
           <option value="0.0" text="No" />
         </options>
       </property>
-      <property xsi:type="standardProperty" id="strokeColorHover" name="Hover Border Color" type="color" mode="dynamic" require="true" visible="true">
+      <property xsi:type="standardProperty" id="strokeColorHover" name="Hover Border Color" type="color" mode="dynamic" require="true" visible="false">
         <description><![CDATA[The border color of the area when hovered over]]></description>
-        <value><![CDATA[161,167,173]]></value>
+        <value><![CDATA[{%= Theme.NeutralDarkColor %}]]></value>
       </property>
       <property xsi:type="standardProperty" id="strokeWidthHover" name="Hover Border Thickness" type="string" mode="dynamic" require="true" visible="true">
         <description><![CDATA[The thickness of the border around the area when hovered over]]></description>
@@ -164,13 +163,13 @@
       </property>
     </category>
     <category id="stateSelected" name="State Selected">
-      <property xsi:type="standardProperty" id="fillSelected" name="Selected Background Color" type="color" mode="dynamic" require="true" visible="true" colorFormat="rgb">
+      <property xsi:type="standardProperty" id="fillSelected" name="Selected Background Color" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
         <description><![CDATA[Background color of the area when selected]]></description>
-        <value><![CDATA[232,241,255]]></value>
+        <value><![CDATA[{%= Theme.PrimaryColor %}]]></value>
       </property>
-      <property xsi:type="standardProperty" id="fillTextSelected" name="Selected Font Color" type="color" mode="dynamic" require="true" visible="true" colorFormat="rgb">
+      <property xsi:type="standardProperty" id="fillTextSelected" name="Selected Font Color" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
         <description><![CDATA[Font color of the area when selected]]></description>
-        <value><![CDATA[0,123,198]]></value>
+        <value><![CDATA[{%= Theme.WhiteColor %}]]></value>
       </property>
       <property xsi:type="standardProperty" id="opacityTextSelected" name="Selected Show Text" type="string" mode="dynamic" require="true" visible="true">
         <description><![CDATA[Show the text when selected]]></description>
@@ -180,9 +179,9 @@
           <option value="0.0" text="No" />
         </options>
       </property>
-      <property xsi:type="standardProperty" id="strokeColorSelected" name="Selected Border Color" type="color" mode="dynamic" require="true" visible="true">
+      <property xsi:type="standardProperty" id="strokeColorSelected" name="Selected Border Color" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
         <description><![CDATA[The border color of the area when selected]]></description>
-        <value><![CDATA[161,167,173]]></value>
+        <value><![CDATA[{%= Theme.NeutralDarkColor %}]]></value>
       </property>
       <property xsi:type="standardProperty" id="strokeWidthSelected" name="Selected Border Thickness" type="string" mode="dynamic" require="true" visible="true">
         <description><![CDATA[The thickness of the border around the area when selected]]></description>
