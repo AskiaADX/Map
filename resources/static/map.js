@@ -149,7 +149,10 @@
 				};
 			})(this.data("name"))
 		);
-        if (window.askia) {
+        if (window.askia 
+            && window.arrLiveRoutingShortcut 
+            && window.arrLiveRoutingShortcut.length > 0
+            && window.arrLiveRoutingShortcut.indexOf(this.currentQuestion) >= 0) {
             askia.triggerAnswer();
         }
 	}
@@ -219,6 +222,7 @@
 		this.mapCaptions = options.mapCaptions || [];
 		this.mapNames = options.mapNames || [];
 		this.mapPaths = options.mapPaths || [];
+        this.currentQuestion = options.currentQuestion || '');
 
 		var animPath = this.animatePath;
 

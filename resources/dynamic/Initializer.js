@@ -33,6 +33,7 @@
         opacitySelected : 1.0,
         adjustXtextObj : [{%:= adjustX %}],
         adjustYtextObj : [{%:= adjustY %}],
+        currentQuestion: '{%:= CurrentQuestion.Shortcut %}',
         mapCaptions : [
         {%
 		Dim i
