@@ -104,7 +104,7 @@
 	* @param {Object} optTxtOff Options which store the style to apply for the non selected text
 	* @param {String} animPath Animate the path
 	*/
-	function clickZone(obj,opt, optTxt, optOff, optTxtOff, animPath) {
+	function clickZone(obj,opt, optTxt, optOff, optTxtOff, animPath, currentQuestion) {
         if (this.data("strID") !== "area") return;
 		document.querySelector("." + this.data("name")).checked = true;
 		obj.forEach(
@@ -152,7 +152,7 @@
         if (window.askia 
             && window.arrLiveRoutingShortcut 
             && window.arrLiveRoutingShortcut.length > 0
-            && window.arrLiveRoutingShortcut.indexOf(this.currentQuestion) >= 0) {
+            && window.arrLiveRoutingShortcut.indexOf(currentQuestion) >= 0) {
             askia.triggerAnswer();
         }
 	}
@@ -222,7 +222,7 @@
 		this.mapCaptions = options.mapCaptions || [];
 		this.mapNames = options.mapNames || [];
 		this.mapPaths = options.mapPaths || [];
-        this.currentQuestion = options.currentQuestion || '');
+        var currentQuestion = options.currentQuestion || "";
 
 		var animPath = this.animatePath;
 
@@ -308,7 +308,7 @@
 		});
 
 		set.click(function () {
-			clickZone.call(this, set, optPathSelected, optTextSelected, optPath, optText, animPath)
+			clickZone.call(this, set, optPathSelected, optTextSelected, optPath, optText, animPath, currentQuestion)
 		});
 
 		paper.setViewBox(0, 0, this.width, this.height, false);
