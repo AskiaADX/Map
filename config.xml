@@ -165,7 +165,7 @@
     <category id="stateSelected" name="State Selected">
       <property xsi:type="standardProperty" id="fillSelected" name="Selected Background Color" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
         <description><![CDATA[Background color of the area when selected]]></description>
-        <value><![CDATA[{%= Theme.PrimaryColor %}]]></value>
+        <value><![CDATA[{%= Theme.SecondaryColor %}]]></value>
       </property>
       <property xsi:type="standardProperty" id="fillTextSelected" name="Selected Font Color" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
         <description><![CDATA[Font color of the area when selected]]></description>
@@ -181,7 +181,7 @@
       </property>
       <property xsi:type="standardProperty" id="strokeColorSelected" name="Selected Border Color" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
         <description><![CDATA[The border color of the area when selected]]></description>
-        <value><![CDATA[{%= Theme.NeutralDarkColor %}]]></value>
+        <value><![CDATA[{%= Theme.SecondaryDarkColor %}]]></value>
       </property>
       <property xsi:type="standardProperty" id="strokeWidthSelected" name="Selected Border Thickness" type="string" mode="dynamic" require="true" visible="true">
         <description><![CDATA[The thickness of the border around the area when selected]]></description>
