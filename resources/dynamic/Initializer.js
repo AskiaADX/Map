@@ -36,7 +36,7 @@
         currentQuestion: '{%:= CurrentQuestion.Shortcut %}',
         mapCaptions : [{% Dim i
         For i = 1 To CurrentQuestion.Responses.Count
-		%}'{%:= CurrentQuestion.Responses[i].Caption %}'{%:= On((i <> CurrentQuestion.Responses.Count),",","") %}{% Next i %}],
+    	%}"{%:= CurrentQuestion.Responses[i].Caption.Replace("\n","\" + " + crlf + "\"") %}"{%:= On((i <> CurrentQuestion.Responses.Count),",","") %}{% Next i %}],
         mapNames : [{% Dim j
         For j = 1 To CurrentQuestion.Responses.Count
 		%}'zone{%:= CurrentQuestion.Responses[j].InputValue() %}'{%:= On((i <> CurrentQuestion.Responses.Count),",","") %}{% Next j %}],

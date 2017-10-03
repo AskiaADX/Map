@@ -293,7 +293,7 @@
 		}
 		for (var i = 0;l = this.mapCaptions.length, i < l; i++) {
 			var bBox = set[i].getBBox();
-			var textObj = path.paper.text( (bBox.x + bBox.width / 2) + ((this.adjustXtextObj[i] === undefined) ? 0 : this.adjustXtextObj[i]), (bBox.y + bBox.height / 2) + ((this.adjustYtextObj[i] === undefined) ? 0 : this.adjustYtextObj[i]), this.mapCaptions[i] ).attr( document.querySelector("." + this.mapNames[i]).checked ? optTextSelected : optText ).data('name',this.mapNames[i]).data('strID','txt');
+			var textObj = path.paper.text( (bBox.x + bBox.width / 2) + ((this.adjustXtextObj[i] === undefined) ? 0 : this.adjustXtextObj[i]), (bBox.y + bBox.height / 2) + ((this.adjustYtextObj[i] === undefined) ? 0 : this.adjustYtextObj[i]), this.mapCaptions[i].replace(/\r\n/g, "\n") ).attr( document.querySelector("." + this.mapNames[i]).checked ? optTextSelected : optText ).data('name',this.mapNames[i]).data('strID','txt');
 			set.push(textObj);
 		}
 		for (var i = 0;l = this.mapPaths.length, i < l; i++) {
