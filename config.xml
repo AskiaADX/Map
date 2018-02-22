@@ -7,7 +7,7 @@
   <info>
     <name>Map</name>
     <guid>a4a47338-1f21-4fc9-ab7e-3b92ab8e2421</guid>
-    <version>2.0.3</version>
+    <version>2.0.4</version>
     <date>2016-03-30</date>
     <description><![CDATA[Several map available]]></description>
     <company>Askia</company>
@@ -41,12 +41,14 @@
       <content fileName="de.txt" type="text" mode="dynamic" position="none" />
       <content fileName="be.txt" type="text" mode="dynamic" position="none" />
       <content fileName="it.txt" type="text" mode="dynamic" position="none" />
+      <content fileName="ch.txt" type="text" mode="dynamic" position="none" />
       <content fileName="blankMapBE.png" type="image" mode="static" position="none" />
       <content fileName="blankMapDE.png" type="image" mode="static" position="none" />
       <content fileName="blankMapFR.png" type="image" mode="static" position="none" />
       <content fileName="blankMapIT.png" type="image" mode="static" position="none" />
       <content fileName="blankMapUK.png" type="image" mode="static" position="none" />
       <content fileName="blankMapUSA.png" type="image" mode="static" position="none" />
+      <content fileName="blankMapCH.png" type="image" mode="static" position="none" />
     </output>
     <output id="fallback">
       <description><![CDATA[Javascript is not enable]]></description>
@@ -66,6 +68,7 @@
           <option value="4" text="Germany" />
           <option value="5" text="Belgium" />
           <option value="6" text="Italy" />
+          <option value="7" text="Switzerland" />
         </options>
       </property>
       <property xsi:type="standardProperty" id="maxWidth" name="Max Width" type="string" mode="dynamic" require="true" visible="true">
