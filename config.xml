@@ -9,7 +9,8 @@
     <guid>a4a47338-1f21-4fc9-ab7e-3b92ab8e2421</guid>
     <version>2.0.4</version>
     <date>2016-03-30</date>
-    <description><![CDATA[Several map available]]></description>
+    <description><![CDATA[Several map available
+	v2.0.5 - Added alt attribute to img]]></description>
     <company>Askia</company>
     <author><![CDATA[Jérôme Duparc <jeromed@askia.com>]]></author>
     <site>http://www.askia.com</site>
@@ -26,7 +27,7 @@
   <outputs defaultOutput="default">
     <output id="default">
       <description><![CDATA[Javascript is enable]]></description>
-      <condition><![CDATA[(browser.support("Javascript")) and (Not((Browser.Name = "Internet Explorer") and (Browser.Version.ToNumber() < 8)))]]></condition>
+      <condition><![CDATA[(browser.support("Javascript")) and (Not((Browser.Name = "Internet Explorer") and (Browser.Version.ToNumber() < 8))) and (Interview.Scenario = "normal")]]></condition>
       <content fileName="map.css" type="css" mode="static" position="head" />
       <content fileName="styles.css" type="css" mode="dynamic" position="head" />
       <content fileName="stylesltie9.html" type="html" mode="dynamic" position="head" />
@@ -53,6 +54,11 @@
     <output id="fallback">
       <description><![CDATA[Javascript is not enable]]></description>
       <condition><![CDATA[(not(Browser.Support("javascript"))) or ((Browser.Name = "Internet Explorer") and (Browser.Version.ToNumber() < 8))]]></condition>
+      <content fileName="fallback.html" type="html" mode="dynamic" position="placeholder" />
+    </output>
+    <output id="accessible">
+      <description><![CDATA[Fallback for web accessibility]]></description>
+      <condition><![CDATA[Interview.Scenario = "accessible"]]></condition>
       <content fileName="fallback.html" type="html" mode="dynamic" position="placeholder" />
     </output>
   </outputs>

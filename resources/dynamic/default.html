@@ -24,7 +24,7 @@ Dim strMap = On(CurrentADC.PropValue("mapid").ToNumber(),"FR","UK","USA","DE","B
 {% EndIf %}
 <div id="adc_{%= CurrentADC.InstanceId %}" class="adc-map">
     <div id="adc_{%= CurrentADC.InstanceId %}_wrapper" class="wrapper">
-        <img src="{%:= CurrentADC.URLTo("static/blankMap" + strMap + ".png") %}" />
+        <img src="{%:= CurrentADC.URLTo("static/blankMap" + strMap + ".png") %}" alt="Map {%= strMap %} " />
         <div id="adc_{%= CurrentADC.InstanceId %}_container" class="container"></div>
     </div>
     <div id="adc_{%= CurrentADC.InstanceId %}_mapAreaForm" class="mapAreaForm">
