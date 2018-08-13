@@ -10,7 +10,9 @@
     <version>2.0.4</version>
     <date>2016-03-30</date>
     <description><![CDATA[Several map available
-	v2.0.5 - Added alt attribute to img]]></description>
+	v2.0.5 - Added alt attribute to img
+		   - Added scenarios accessible and normal
+		   - Added output accessible]]></description>
     <company>Askia</company>
     <author><![CDATA[Jérôme Duparc <jeromed@askia.com>]]></author>
     <site>http://www.askia.com</site>
