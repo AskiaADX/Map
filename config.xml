@@ -21,13 +21,13 @@
       <category>General</category>
     </categories>
     <constraints>
-      <constraint on="questions" chapter="false" single="true" multiple="false" numeric="false" date="false" open="false" requireParentLoop="false" RequireLoopDepth="false" />
+      <constraint on="questions" chapter="false" single="true" multiple="false" numeric="false" date="false" open="false" requireParentLoop="false" RequireLoopDepth="0" />
       <constraint on="controls" responseblock="true" label="false" textbox="false" checkbox="false" listbox="false" radiobutton="false" />
       <constraint on="responses" max="*" min="*" />
     </constraints>
   </info>
   <outputs defaultOutput="default">
-    <output id="default">
+    <output id="default" ManageLoopDepth="0">
       <description><![CDATA[Javascript is enable]]></description>
       <condition><![CDATA[(browser.support("Javascript")) and (Not((Browser.Name = "Internet Explorer") and (Browser.Version.ToNumber() < 8))) and (Interview.Scenario = "normal")]]></condition>
       <content fileName="map.css" type="css" mode="static" position="head" />
@@ -53,12 +53,12 @@
       <content fileName="blankMapUSA.png" type="image" mode="static" position="none" />
       <content fileName="blankMapCH.png" type="image" mode="static" position="none" />
     </output>
-    <output id="fallback">
+    <output id="fallback" ManageLoopDepth="0">
       <description><![CDATA[Javascript is not enable]]></description>
       <condition><![CDATA[(not(Browser.Support("javascript"))) or ((Browser.Name = "Internet Explorer") and (Browser.Version.ToNumber() < 8))]]></condition>
       <content fileName="fallback.html" type="html" mode="dynamic" position="placeholder" />
     </output>
-    <output id="accessible">
+    <output id="accessible" ManageLoopDepth="0">
       <description><![CDATA[Fallback for web accessibility]]></description>
       <condition><![CDATA[Interview.Scenario = "accessible"]]></condition>
       <content fileName="fallback.html" type="html" mode="dynamic" position="placeholder" />
