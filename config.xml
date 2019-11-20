@@ -7,7 +7,7 @@
   <info>
     <name>Map</name>
     <guid>a4a47338-1f21-4fc9-ab7e-3b92ab8e2421</guid>
-    <version>3.0.0</version>
+    <version>3.0.1</version>
     <date>2016-03-30</date>
     <description><![CDATA[Several map available
 	v2.0.5 - Added alt attribute to img
@@ -34,7 +34,7 @@
       <content fileName="styles.css" type="css" mode="dynamic" position="head" />
       <content fileName="stylesltie9.html" type="html" mode="dynamic" position="head" />
       <content fileName="default.html" type="html" mode="dynamic" position="placeholder" />
-      <content fileName="raphael-min.js" type="javascript" mode="static" position="foot" />
+      <content fileName="raphael.min.js" type="javascript" mode="static" position="foot" />
       <content fileName="map-min.js" type="javascript" mode="static" position="foot" />
       <content fileName="Initializer.js" type="javascript" mode="dynamic" position="foot" />
       <content fileName="blankMap.png" type="image" mode="static" position="none" />

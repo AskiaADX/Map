@@ -307,6 +307,10 @@
 			hoverOut.call(this, set, optPath, optText, animPath)
 		});
 
+        set.touchend(function () {
+			clickZone.call(this, set, optPathSelected, optTextSelected, optPath, optText, animPath, currentQuestion)
+        });
+        
 		set.click(function () {
 			clickZone.call(this, set, optPathSelected, optTextSelected, optPath, optText, animPath, currentQuestion)
 		});
@@ -314,8 +318,9 @@
 		paper.setViewBox(0, 0, this.width, this.height, false);
 
 		this.resizePaper(paper, this.width, this.height);
-		addEvent(document.getElementsByTagName("BODY")[0], "resize", this.resizePaper(paper, this.width, this.height));
-	}
+        addEvent(document.getElementsByTagName("BODY")[0], "resize", this.resizePaper(paper, this.width, this.height));
+         
+    }
 
 	/**
 	* Resize the map
